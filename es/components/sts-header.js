@@ -4,10 +4,10 @@ class StsHeader extends HTMLElement {
     const currentPath = window.location.pathname;
 
     const navLinks = [
-      { href: '/STEPTOSANTIAGO/pages/rutas.html',     label: 'Todas las Rutas' },
-      { href: '/STEPTOSANTIAGO/pages/servicios.html', label: 'Servicios' },
-      { href: '/STEPTOSANTIAGO/pages/nosotros.html',  label: 'Sobre Nosotros' },
-      { href: '/STEPTOSANTIAGO/pages/blog.html',      label: 'Blog' },
+      { href: '/es/pages/rutas.html',     label: 'Todas las Rutas' },
+      { href: '/es/pages/servicios.html', label: 'Servicios' },
+      { href: '/es/pages/nosotros.html',  label: 'Sobre Nosotros' },
+      { href: '/es/pages/blog.html',      label: 'Blog' },
     ];
 
     const desktopLinks = navLinks.map(link => {
