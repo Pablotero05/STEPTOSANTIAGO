@@ -1,0 +1,50 @@
+<html class="h-full" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+  <link id="google-fonts-link"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <script src="/components/sts-header.js" defer></script>
+  <script src="/components/sts-footer.js" defer></script>
+  <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../fontawesome/css/brands.min.css">
+  <script src="https://cdn.tailwindcss.com/"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <title>Step To Santiago - Agencia de Viajes Especializada en el Camino de Santiago | Santiago de Compostela</title>
+  <meta name="description"
+    content="Agencia de viajes especializada en el Camino de Santiago con sede en Santiago de Compostela. Más de 10 años organizando peregrinaciones únicas por el Camino Francés, Portugués, del Norte y más. Guías certificados, alojamientos seleccionados y asistencia 24h.">
+  <meta name="language" content="es">
+  <meta property="og:title" content="Step To Santiago - Tu Camino de Santiago a Medida desde Galicia">
+  <meta property="og:description"
+    content="Especialistas locales en el Camino de Santiago. Organizamos tu peregrinación con alojamientos seleccionados, traslado de equipaje, guías certificados y asistencia completa. Más de 5.000 peregrinos nos confían su experiencia.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Step To Santiago - Agencia Especializada en el Camino de Santiago">
+  <meta name="twitter:description"
+    content="Vive el Camino de Santiago con expertos locales de Galicia. Rutas personalizadas, alojamientos con encanto y asistencia 24h. Solicita tu presupuesto gratuito.">
+  
+</head>
+
+<body class="h-full bg-white">
+  <div class="frame-root">
+    <div class="frame-content">
+      <div class="[font-family:var(--font-family-body)]">
+        <sts-header logo="../assets/ststrasp.png"></sts-header>
+
+
+
+
+        <sts-footer logo="../assets/stsLOGO.png"></sts-footer>
+      </div>
+    </div>
+    <div class="frame-content"></div>
+  </div>
+</body>
+
+</html>

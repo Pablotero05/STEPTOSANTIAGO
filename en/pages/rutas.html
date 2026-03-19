@@ -10,7 +10,7 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
     rel="stylesheet">
   <script src="../components/sts-header.js" defer></script>
-  <script src=".../components/sts-footer.js" defer></script>
+  <script src="../components/sts-footer.js" defer></script>
   <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../../fontawesome/css/brands.min.css">
   <script src="https://cdn.tailwindcss.com/"></script>
@@ -37,101 +37,113 @@
       <div class="[font-family:var(--font-family-body)]">
           <sts-header logo="/assets/ststrasp.png"></sts-header>
 
-          
   <!-- ===== HERO ===== -->
   <section class="relative py-24 overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src="../../assets/catedral-hero.jpg" alt="Mapa del Camino de Santiago" class="w-full h-full object-cover">
+      <img src="../../assets/catedral-hero.jpg" alt="Camino de Santiago map" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-transparent"></div>
     </div>
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-[var(--accent-color)] font-semibold text-lg mb-3 tracking-wider uppercase">8 rutas jacobeas</p>
+        <p class="text-[var(--accent-color)] font-semibold text-lg mb-3 tracking-wider uppercase">8 pilgrimage routes</p>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight" style="font-family: var(--font-family-heading);">
-          Todas las Rutas del Camino de Santiago
+          All Camino de Santiago Routes
         </h1>
-        <p class="text-gray-200 text-xl mb-8 leading-relaxed">Desde el Camino Francés clásico hasta los caminos más remotos y auténticos. Encuentra la ruta que mejor encaja con tú.</p>
+        <p class="text-gray-200 text-xl mb-8 leading-relaxed">
+          From the classic French Way to the most remote and authentic routes. Find the path that suits you best.
+        </p>
         <nav class="flex gap-2 text-sm text-gray-400">
-          <a href="/" class="hover:text-white transition-colors">Inicio</a>
+          <a href="/" class="hover:text-white transition-colors">Home</a>
           <span>/</span>
-          <span class="text-white">Rutas</span>
+          <span class="text-white">Routes</span>
         </nav>
       </div>
     </div>
   </section>
 
-  <!-- ===== FILTRO VISUAL ===== -->
+  <!-- ===== FILTER ===== -->
   <section class="py-8 bg-white border-b border-[var(--light-border-color)] top-24 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap gap-3 items-center">
-        <span class="text-[var(--gray-text-color)] font-medium text-sm mr-2">Filtrar por dificultad:</span>
-        <button onclick="filterRoutes('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold bg-[var(--primary-color)] text-white transition-all" data-filter="all">Todas</button>
-        <button onclick="filterRoutes('facil')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-green-100 hover:text-green-700 transition-all" data-filter="facil">Fácil</button>
-        <button onclick="filterRoutes('moderado')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-yellow-100 hover:text-yellow-700 transition-all" data-filter="moderado">Moderado</button>
-        <button onclick="filterRoutes('exigente')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-orange-100 hover:text-orange-700 transition-all" data-filter="exigente">Exigente</button>
-        <button onclick="filterRoutes('muy-exigente')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-red-100 hover:text-red-700 transition-all" data-filter="muy-exigente">Muy Exigente</button>
+        <span class="text-[var(--gray-text-color)] font-medium text-sm mr-2">Filter by difficulty:</span>
+        <button onclick="filterRoutes('all')" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold bg-[var(--primary-color)] text-white transition-all" data-filter="all">All</button>
+        <button onclick="filterRoutes('facil')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-green-100 hover:text-green-700 transition-all" data-filter="facil">Easy</button>
+        <button onclick="filterRoutes('moderado')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-yellow-100 hover:text-yellow-700 transition-all" data-filter="moderado">Moderate</button>
+        <button onclick="filterRoutes('exigente')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-orange-100 hover:text-orange-700 transition-all" data-filter="exigente">Challenging</button>
+        <button onclick="filterRoutes('muy-exigente')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-gray-100 text-[var(--gray-text-color)] hover:bg-red-100 hover:text-red-700 transition-all" data-filter="muy-exigente">Very Challenging</button>
       </div>
     </div>
   </section>
 
-  <!-- ===== GRID DE RUTAS ===== -->
-  <!-- ✅ ESTA SECCIÓN FALTABA — routeCards.js inyecta las cards aquí -->
+  <!-- ===== ROUTES GRID ===== -->
   <section class="py-20 bg-[var(--light-background-color)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div id="routes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Las cards se generan automáticamente desde routeCards.js -->
+        <!-- Cards are generated automatically from routeCards.js -->
       </div>
     </div>
   </section>
 
-  <!-- ===== ¿QUÉ RUTA ELEGIR? ===== -->
+  <!-- ===== WHICH ROUTE ===== -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-14">
-        <p class="text-[var(--accent-color)] font-semibold text-lg mb-3 tracking-wider uppercase">Orientación personalizada</p>
+        <p class="text-[var(--accent-color)] font-semibold text-lg mb-3 tracking-wider uppercase">Personal guidance</p>
         <h2 class="text-3xl md:text-4xl font-bold text-[var(--dark-text-color)]"
             style="font-family: var(--font-family-heading);">
-          ¿No sabes qué ruta elegir?
+          Not sure which route to choose?
         </h2>
         <p class="text-[var(--gray-text-color)] text-lg max-w-2xl mx-auto mt-4">
-          Cuéntanos tu nivel de condición física, el tiempo disponible y tus preferencias.
-          Nuestros expertos te orientarán sin compromiso.
+          Tell us your fitness level, available time, and preferences.
+          Our experts will guide you with no obligation.
         </p>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+
         <div class="text-center p-8 bg-[var(--light-background-color)] rounded-2xl">
           <div class="w-16 h-16 mx-auto mb-4 bg-[var(--primary-color)]/10 rounded-full flex items-center justify-center">
             <i class="fa-solid fa-clock text-2xl text-[var(--primary-color)]"></i>
           </div>
-          <h3 class="text-lg font-bold text-[var(--dark-text-color)] mb-2" style="font-family: var(--font-family-heading);">Poco tiempo</h3>
-          <p class="text-[var(--gray-text-color)] text-sm">Si tienes menos de 10 días, el Camino Inglés o Portugués (tramo final) son tu mejor opción.</p>
+          <h3 class="text-lg font-bold text-[var(--dark-text-color)] mb-2" style="font-family: var(--font-family-heading);">Limited time</h3>
+          <p class="text-[var(--gray-text-color)] text-sm">
+            If you have less than 10 days, the English Way or the final stages of the Portuguese Way are your best option.
+          </p>
         </div>
+
         <div class="text-center p-8 bg-[var(--light-background-color)] rounded-2xl">
           <div class="w-16 h-16 mx-auto mb-4 bg-[var(--accent-color)]/10 rounded-full flex items-center justify-center">
             <i class="fa-solid fa-person-hiking text-2xl text-[var(--accent-color)]"></i>
           </div>
-          <h3 class="text-lg font-bold text-[var(--dark-text-color)] mb-2" style="font-family: var(--font-family-heading);">Primera vez</h3>
-          <p class="text-[var(--gray-text-color)] text-sm">El Camino Francés o el Portugués son los más recomendados para quienes se estrenan como peregrinos.</p>
+          <h3 class="text-lg font-bold text-[var(--dark-text-color)] mb-2" style="font-family: var(--font-family-heading);">First time</h3>
+          <p class="text-[var(--gray-text-color)] text-sm">
+            The French Way or the Portuguese Way are the most recommended for first-time pilgrims.
+          </p>
         </div>
+
         <div class="text-center p-8 bg-[var(--light-background-color)] rounded-2xl">
           <div class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
             <i class="fa-solid fa-mountain text-2xl text-red-500"></i>
           </div>
-          <h3 class="text-lg font-bold text-[var(--dark-text-color)] mb-2" style="font-family: var(--font-family-heading);">Buscas aventura</h3>
-          <p class="text-[var(--gray-text-color)] text-sm">El Camino Primitivo o la Vía de la Plata son para quienes buscan un reto físico y la máxima soledad.</p>
+          <h3 class="text-lg font-bold text-[var(--dark-text-color)] mb-2" style="font-family: var(--font-family-heading);">Looking for adventure</h3>
+          <p class="text-[var(--gray-text-color)] text-sm">
+            The Primitive Way or the Via de la Plata are for those seeking a physical challenge and maximum solitude.
+          </p>
         </div>
+
       </div>
+
       <div class="text-center">
-        <a href="/pages/contacto.html"
+        <a href="/en/pages/contact.html"
            class="inline-flex items-center gap-3 px-8 py-4 bg-[var(--primary-color)] text-white font-bold rounded-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
           <i class="fa-solid fa-comments"></i>
-          Habla con un experto gratis
+          Talk to an expert for free
         </a>
       </div>
     </div>
   </section>
 
-    <sts-footer logo="/assets/ststrasp.png"></sts-footer>
+    <sts-footer logo="/assets/stsLOGO.png"></sts-footer>
 
     <script src="../components/routeCards.js"></script>
     <script src="../../scripts/filterDiff.js"></script>

@@ -3,10 +3,10 @@ class StsHeader extends HTMLElement {
     const currentPath = window.location.pathname;
 
     const navLinks = [
-      { href: '/es/pages/rutas.html', label: 'Todas las Rutas' },
-      { href: '/es/pages/servicios.html', label: 'Servicios' },
-      { href: '/es/pages/nosotros.html', label: 'Sobre Nosotros' },
-      { href: '/es/pages/blog.html', label: 'Blog' },
+      { href: '/en/pages/rutas.html', label: 'All Routes' },
+      { href: '/en/pages/servicios.html', label: 'Services' },
+      { href: '/en/pages/nosotros.html', label: 'About Us' },
+      { href: '/en/pages/blog.html', label: 'Blog' },
     ];
 
     const desktopLinks = navLinks.map(link => {
@@ -30,13 +30,13 @@ class StsHeader extends HTMLElement {
     }).join('');
 
     this.innerHTML = `
-      <header id="global-header" class="bg-[var(--light-background-color)] sticky top-0 z-50 shadow-lg px-0">
+      <header id="global-header" class="bg-[var(--light-background-color)] sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto pl-0 pr-4 sm:pl-0 sm:pr-6 lg:pl-2 lg:pr-8">
           <div class="flex justify-between items-center h-24">
 
             <a href="/" class="flex items-center">
               <img src="${this.getAttribute('logo') || 'assets/ststrasp.png'}"
-                alt="Step To Santiago - Agencia del Camino de Santiago"
+                alt="Step To Santiago - Camino de Santiago Agency"
                 class="h-48 p-6 w-auto object-contain">
             </a>
 
@@ -44,26 +44,26 @@ class StsHeader extends HTMLElement {
               ${desktopLinks}
               <a href="/contacto"
                 class="px-6 py-3 bg-[var(--primary-color)] text-white font-semibold rounded-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                Consigue Tu Presupuesto Gratis
+                Get Your Free Quote
               </a>
 
-              <!-- Toggle español -->
+              <!-- Language toggle -->
               <label class="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" value="" class="sr-only peer" id="lang-toggle">
-                <div class="group peer ring-0 bg-rose-400 rounded-full outline-none duration-300 after:duration-300 w-24 h-12 shadow-md
-                  peer-checked:bg-blue-500 peer-focus:outline-none
+                <div class="group peer ring-0 bg-blue-500 rounded-full outline-none duration-300 after:duration-300 w-24 h-12 shadow-md
+                  peer-checked:bg-rose-400 peer-focus:outline-none
                   after:content-[''] after:rounded-full after:absolute after:outline-none
-                  after:h-10 after:w-10 after:top-1 after:left-1
+                  after:h-10 after:w-10 after:top-1 after:right-1
                   after:bg-cover after:bg-center
-                  after:bg-[url('../../assets/flags/es_flag.png')]
-                  peer-checked:after:translate-x-12
-                  peer-checked:after:bg-[url('../../assets/flags/en_flag.png')]
+                  after:bg-[url('../../assets/flags/en_flag.png')]
+                  peer-checked:after:-translate-x-12
+                  peer-checked:after:bg-[url('../../assets/flags/es_flag.png')]
                   peer-hover:after:scale-95">
                 </div>
               </label>
             </nav>
 
-            <button id="mobile-menu-btn" class="lg:hidden p-2 text-[var(--dark-text-color)] hover:text-[var(--primary-color)]" aria-label="Abrir menú">
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-[var(--dark-text-color)] hover:text-[var(--primary-color)]" aria-label="Open menu">
               <i class="fa-solid fa-bars text-2xl" aria-hidden="true"></i>
             </button>
           </div>
@@ -73,14 +73,13 @@ class StsHeader extends HTMLElement {
           <div class="px-4 py-6 space-y-4">
             ${mobileLinks}
             <a href="/contacto" class="block text-center px-6 py-4 bg-[var(--primary-color)] text-white font-semibold rounded-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all">
-              Consigue Tu Presupuesto Gratis
+              Get Your Free Quote
             </a>
           </div>
         </div>
       </header>
     `;
 
-    // ✅ Aquí sí funciona, el DOM ya existe
     this._initMobileMenu();
     this._initLangToggle();
   }
@@ -90,6 +89,7 @@ class StsHeader extends HTMLElement {
   if (!toggle) return;
 
   const url = new URL(window.location.href);
+
 
   toggle.addEventListener('change', (e) => {
     setTimeout(() => {
@@ -131,11 +131,11 @@ class StsHeader extends HTMLElement {
       if (isOpen) {
         menu.style.maxHeight = menu.scrollHeight + 'px';
         icon?.classList.replace('fa-bars', 'fa-xmark');
-        btn.setAttribute('aria-label', 'Cerrar menú');
+        btn.setAttribute('aria-label', 'Close menu');
       } else {
         menu.style.maxHeight = '0';
         icon?.classList.replace('fa-xmark', 'fa-bars');
-        btn.setAttribute('aria-label', 'Abrir menú');
+        btn.setAttribute('aria-label', 'Open menu');
       }
     });
 
