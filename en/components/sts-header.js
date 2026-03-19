@@ -88,32 +88,24 @@ class StsHeader extends HTMLElement {
   const toggle = this.querySelector('#lang-toggle');
   if (!toggle) return;
 
-  const url = new URL(window.location.href);
-
-
   toggle.addEventListener('change', (e) => {
     setTimeout(() => {
-
       const currentUrl = new URL(window.location.href);
       const path = currentUrl.pathname;
 
-      let newPath;
+      const toLang   = e.target.checked ? 'es' : 'en';
+      const fromLang = e.target.checked ? 'en' : 'es';
 
-      if (path.startsWith("/es")) {
-        newPath = path.replace(/^\/es/, "/en");
-      } else if (path.startsWith("/en")) {
-        newPath = path.replace(/^\/en/, "/es");
-      } else {
-        // Si no hay idioma en la URL
-        newPath = (e.target.checked ? "/en" : "/es") + path;
-      }
+      // Reemplaza /es/ o /en/ dondequiera que aparezca en el path
+      // El (\/|$) captura lo que viene después: otra barra o fin de cadena
+      const newPath = path.replace(
+        new RegExp(`\\/${fromLang}(\\/|$)`),
+        `/${toLang}$1`
+      );
 
-      // Mantener parámetros (?x=1)
       currentUrl.pathname = newPath;
-
       window.location.href = currentUrl.toString();
-
-    }, 400); // animación
+    }, 400);
   });
 }
 
