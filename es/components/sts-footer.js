@@ -101,8 +101,8 @@ class StsFooter extends HTMLElement {
                 © ${new Date().getFullYear()} Step To Santiago. Todos los derechos reservados.
               </p>
               <div class="flex flex-wrap gap-6 justify-center">
-                <a href="/politica-de-privacidad"  class="text-white/50 hover:text-white text-sm transition-colors">Política de Privacidad</a>
-                <a href="/aviso-legal"             class="text-white/50 hover:text-white text-sm transition-colors">Aviso Legal</a>
+                <a href="pages/politicas.html"  class="text-white/50 hover:text-white text-sm transition-colors">Política de Privacidad</a>
+                <a href="pages/legal.html"             class="text-white/50 hover:text-white text-sm transition-colors">Aviso Legal</a>
                 <a href="/terminos-y-condiciones"  class="text-white/50 hover:text-white text-sm transition-colors">Términos y Condiciones</a>
                 <a href="/preguntas-frecuentes"    class="text-white/50 hover:text-white text-sm transition-colors">FAQ</a>
               </div>
